@@ -1,0 +1,118 @@
+{
+  "name": "Node-encoder",
+  "version": "0.0.1",
+  "dependencies": {
+    "socket.io": {
+      "version": "0.9.14",
+      "from": "socket.io@*",
+      "dependencies": {
+        "socket.io-client": {
+          "version": "0.9.11",
+          "from": "socket.io-client@0.9.11",
+          "dependencies": {
+            "uglify-js": {
+              "version": "1.2.5",
+              "from": "uglify-js@1.2.5"
+            },
+            "ws": {
+              "version": "0.4.25",
+              "from": "ws@0.4.x",
+              "dependencies": {
+                "commander": {
+                  "version": "0.6.1",
+                  "from": "commander@~0.6.1"
+                },
+                "tinycolor": {
+                  "version": "0.0.1",
+                  "from": "tinycolor@0.x"
+                },
+                "options": {
+                  "version": "0.0.5",
+                  "from": "options@latest"
+                }
+              }
+            },
+            "xmlhttprequest": {
+              "version": "1.4.2",
+              "from": "xmlhttprequest@1.4.2"
+            },
+            "active-x-obfuscator": {
+              "version": "0.0.1",
+              "from": "active-x-obfuscator@0.0.1",
+              "dependencies": {
+                "zeparser": {
+                  "version": "0.0.5",
+                  "from": "zeparser@0.0.5"
+                }
+              }
+            }
+          }
+        },
+        "policyfile": {
+          "version": "0.0.4",
+          "from": "policyfile@0.0.4"
+        },
+        "base64id": {
+          "version": "0.1.0",
+          "from": "base64id@0.1.0"
+        },
+        "redis": {
+          "version": "0.7.3",
+          "from": "redis@0.7.3"
+        }
+      }
+    },
+    "mime": {
+      "version": "1.2.9",
+      "from": "mime@*"
+    },
+    "formidable": {
+      "version": "1.0.14",
+      "from": "formidable@*"
+    },
+    "knox": {
+      "version": "0.8.2",
+      "from": "knox@*",
+      "dependencies": {
+        "xml2js": {
+          "version": "0.2.7",
+          "from": "xml2js@0.2.x",
+          "dependencies": {
+            "sax": {
+              "version": "0.5.2",
+              "from": "sax@0.5.2"
+            }
+          }
+        },
+        "debug": {
+          "version": "0.7.2",
+          "from": "debug@~0.7.0"
+        },
+        "stream-counter": {
+          "version": "0.1.0",
+          "from": "stream-counter@~0.1.0",
+          "dependencies": {
+            "readable-stream": {
+              "version": "1.0.2",
+              "from": "readable-stream@~1.0.2"
+            }
+          }
+        }
+      }
+    },
+    "sox": {
+      "version": "0.1.0",
+      "from": "sox@*",
+      "dependencies": {
+        "batch": {
+          "version": "0.3.2",
+          "from": "batch@~0.3.2"
+        }
+      }
+    },
+    "querystring": {
+      "version": "0.2.0",
+      "from": "querystring@*"
+    }
+  }
+}

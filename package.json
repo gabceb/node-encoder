@@ -1,0 +1,13 @@
+{
+	"name" : "Node-encoder",
+	"description" : "Encodes Wav file to MP3 files using SOX and uploads the files to S3",
+	"version" : "0.0.1",
+	"dependencies" : {
+		"socket.io" : "*",
+		"mime": "*",
+		"formidable" : "*",
+		"knox": "*",
+		"sox": "*",
+		"querystring": "*"
+	}
+}
