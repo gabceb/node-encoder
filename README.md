@@ -1,15 +1,34 @@
 # Node-encoder
 
-## Node webserver used to encode comments from wave to mp3 and upload it to S3
+#### Node server to encode audio files from WAV to MP3 and upload it to S3
 
-### Requirements:
+## Requirements:
 
 - All NPM packages
 - Sox library with mp3 support. Read below for instructions on Ubuntu machines.
 - S3 key, secret and bucket for uploading the files to S3 on config.js
 - Secret key on uploader/upload_credential.js
+- Capistrano gem if deploying using Capistrano
 
-### Installing Sox with MP3 support (verified on Ubuntu)
+## Generating a security hash
+
+Node-encoder uses a security hash to make sure it received a legitimate request. If you need change the key that is used just change the values on the isValidCredential method.
+
+This approached was taken from the [Node-upload-progress project](https://github.com/phstc/node-upload-progress). To generate the token with the security hash on Ruby use the code below or refer to the [Uploader-rails project](https://github.com/phstc/uploader_rails).
+
+```ruby
+def security_hash key
+    Digest::MD5.hexdigest SECRET_KEY + key
+end
+```
+
+## Building Sox with MP3 support:
+
+#### Using Chef:
+
+- Use the [sox_mp3-cookbook](https://github.com/gabceb/sox_mp3-cookbook) if using Chef
+
+#### Building Sox with MP3 support (verified on Ubuntu machines):
 
 First install some build tools:
 
@@ -37,12 +56,22 @@ Remove the option that blocks mp3 encoding, add libmp3lame-dev to the build depe
 
 Instructions were copied from this [forum entry](http://ubuntuforums.org/showthread.php?t=1576848&p=9859875#post9859875)
 
-### Running server
+## Running server
 
 - Install supervisor `npm install -g supervisor`
 - supervisor server.js
 
-### Running server in production
+## Deploy using Capistrano
 
-- export NODE_ENV=production
-- supervisor server.js
+#### Vagrant
+
+- Refer to the [Vagrant Getting Started](http://docs.vagrantup.com/v2/getting-started/index.html) for instructions on how to create a vagrant box
+- Ssh to the box and build sox with mp3 support manuall using the instructions above or using the Chef cookbook
+- run `cap vagrant deploy`
+
+#### Production
+
+- Provision a box using Ubuntu 12.04
+- Enter the box details on config/production.rb
+- Build sox with mp3 support manuall using the instructions above or using the Chef cookbook
+- Run `cap production deploy`
