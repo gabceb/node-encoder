@@ -1,6 +1,6 @@
 # Node-encoder
 
-#### Node server to encode audio files from WAV to MP3 and upload it to S3
+#### Node server to encode audio files from WAV to MP3 using SOX and upload them to S3
 
 ## Requirements:
 
@@ -9,6 +9,10 @@
 - S3 key, secret and bucket for uploading the files to S3 on config.js
 - Secret key on uploader/upload_credential.js
 - Capistrano gem if deploying using Capistrano
+
+## Audio recording on the browser
+
+Node-encoder was created to work with this version of [jRecorder](https://github.com/gabceb/jRecorder) and it assumes it receives a request with the WAV file as the POST data. To change the way node-encoder receives the WAV data change the authorizedUpload function.
 
 ## Generating a security hash
 
@@ -26,7 +30,7 @@ end
 
 #### Using Chef:
 
-- Use the [sox_mp3-cookbook](https://github.com/gabceb/sox_mp3-cookbook) if using Chef
+- Use the [sox_mp3-cookbook](https://github.com/gabceb/sox_mp3-cookbook) cookbook
 
 #### Building Sox with MP3 support (verified on Ubuntu machines):
 
@@ -66,7 +70,7 @@ Instructions were copied from this [forum entry](http://ubuntuforums.org/showthr
 #### Vagrant
 
 - Refer to the [Vagrant Getting Started](http://docs.vagrantup.com/v2/getting-started/index.html) for instructions on how to create a vagrant box
-- Ssh to the box and build sox with mp3 support manuall using the instructions above or using the Chef cookbook
+- SSH to the box and build sox with mp3 support manuall using the instructions above or using the Chef cookbook
 - run `cap vagrant deploy`
 
 #### Production
