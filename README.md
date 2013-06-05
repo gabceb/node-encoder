@@ -2,7 +2,7 @@
 
 #### Node server to encode audio files from WAV to MP3 using SOX and upload them to S3
 
-## Requirements:
+## Requirements
 
 - All NPM packages
 - Sox library with mp3 support. Read below for instructions on Ubuntu machines.
@@ -26,13 +26,13 @@ def security_hash key
 end
 ```
 
-## Building Sox with MP3 support:
+## Building Sox with MP3 support
 
-#### Using Chef:
+#### Using Chef
 
 - Use the [sox_mp3-cookbook](https://github.com/gabceb/sox_mp3-cookbook) cookbook
 
-#### Building Sox with MP3 support (verified on Ubuntu machines):
+#### Building Sox with MP3 support (verified on Ubuntu machines)
 
 First install some build tools:
 
