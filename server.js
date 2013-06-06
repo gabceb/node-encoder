@@ -48,7 +48,7 @@ function handler(req, res){
 
 		req.query = url.parse(req.url, true).query;
 
-		if (req.url.match(/^\/encode\?/) && req.method.toLowerCase() == 'post')
+		if (req.url.match(/^\/encode\?/))
 		{
 			console.log("Upload request received");
 
